@@ -25,14 +25,14 @@ class ListApp extends StatelessWidget {
           backgroundColor: const Color.fromARGB(255, 0, 0, 0),
           centerTitle: true,
         ),
-        body: ListView.builder(
+        body: ListView.separated(
+          separatorBuilder: (context, index) => Divider(color: Colors.grey),
           itemCount: items.length,
           itemBuilder: (context, index) {
             return ListTile(
               leading: const Icon(
                 Icons.check_circle,
                 color: Color.fromARGB(255, 0, 0, 0),
-                child: Icon(icons.acount_box),
               ),
               title: Text(
                 items[index],
